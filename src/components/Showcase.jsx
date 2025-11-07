@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const items = [
   {
@@ -58,13 +59,20 @@ export default function Showcase() {
             ))}
           </div>
 
-          <div className="aspect-[4/3] overflow-hidden rounded-xl border border-neutral-200">
-            <img
-              alt={items[active].title}
-              src={items[active].img}
-              className="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
-              loading="lazy"
-            />
+          <div className="relative aspect-[4/3] overflow-hidden rounded-xl border border-neutral-200">
+            <AnimatePresence mode="wait">
+              <motion.img
+                key={items[active].img}
+                alt={items[active].title}
+                src={items[active].img}
+                initial={{ opacity: 0, scale: 1.02 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.98 }}
+                transition={{ duration: 0.5, ease: 'easeOut' }}
+                className="h-full w-full object-cover"
+                loading="lazy"
+              />
+            </AnimatePresence>
           </div>
         </div>
       </div>

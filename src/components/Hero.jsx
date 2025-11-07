@@ -1,11 +1,12 @@
 import Spline from '@splinetool/react-spline';
 import { ArrowRight } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 export default function Hero() {
   return (
     <section className="relative h-[90vh] w-full overflow-hidden" id="beranda">
       <div className="absolute inset-0">
-        <Spline scene="https://prod.spline.design/zhZFnwyOYLgqlLWk/scene.splinecode" style={{ width: '100%', height: '100%' }} />
+        <Spline scene="https://prod.spline.design/a6HhFsV3-DN9Z-yP/scene.splinecode" style={{ width: '100%', height: '100%' }} />
       </div>
 
       {/* Overlay lembut untuk kontras teks (tidak menghalangi interaksi) */}
@@ -13,18 +14,40 @@ export default function Hero() {
 
       <div className="relative z-10 mx-auto flex h-full max-w-6xl items-center px-6">
         <div className="max-w-2xl">
-          <span className="inline-block rounded-full border border-red-500/30 bg-white/70 px-3 py-1 text-xs font-medium tracking-wide text-red-600">
+          <motion.span
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: 'easeOut' }}
+            className="inline-block rounded-full border border-red-500/30 bg-white/70 px-3 py-1 text-xs font-medium tracking-wide text-red-600"
+          >
             Zarman Studio — Seni Digital Minimalis
-          </span>
-          <h1 className="mt-4 text-4xl font-semibold leading-tight text-neutral-900 md:text-6xl">
+          </motion.span>
+
+          <motion.h1
+            initial={{ opacity: 0, y: 14 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, ease: 'easeOut', delay: 0.05 }}
+            className="mt-4 text-4xl font-semibold leading-tight text-neutral-900 md:text-6xl"
+          >
             Desain Grafis & Animasi
             <span className="text-red-600"> Bergaya Jepang</span>
-          </h1>
-          <p className="mt-4 text-neutral-600 md:text-lg">
-            Visual yang bersih, presisi, dan bermakna. Estetika Jepang dengan sentuhan modern untuk brand yang ingin tampil rapi dan berkarakter.
-          </p>
+          </motion.h1>
 
-          <div className="mt-8 flex flex-wrap items-center gap-4">
+          <motion.p
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, ease: 'easeOut', delay: 0.1 }}
+            className="mt-4 text-neutral-600 md:text-lg"
+          >
+            Visual yang bersih, presisi, dan bermakna. Estetika Jepang dengan sentuhan modern untuk brand yang ingin tampil rapi dan berkarakter.
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 18 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, ease: 'easeOut', delay: 0.15 }}
+            className="mt-8 flex flex-wrap items-center gap-4"
+          >
             <a
               href="#kontak"
               className="inline-flex items-center gap-2 rounded-full bg-red-600 px-5 py-3 text-white transition-colors hover:bg-red-700"
@@ -38,7 +61,7 @@ export default function Hero() {
             >
               Lihat Karya
             </a>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

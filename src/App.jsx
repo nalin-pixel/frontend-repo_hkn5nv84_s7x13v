@@ -2,10 +2,13 @@ import Hero from './components/Hero';
 import Services from './components/Services';
 import Showcase from './components/Showcase';
 import Contact from './components/Contact';
+import Gallery from './components/Gallery';
+import Effects from './components/Effects';
 
 function App() {
   return (
     <div className="min-h-screen bg-white text-neutral-900">
+      <Effects />
       {/* Simple top bar */}
       <header className="sticky top-0 z-40 w-full border-b border-neutral-200 bg-white/70 backdrop-blur">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-3">
@@ -16,6 +19,7 @@ function App() {
           <nav className="hidden gap-6 text-sm md:flex">
             <a href="#layanan" className="text-neutral-600 hover:text-neutral-900">Layanan</a>
             <a href="#karya" className="text-neutral-600 hover:text-neutral-900">Karya</a>
+            <a href="#galeri" className="text-neutral-600 hover:text-neutral-900">Galeri</a>
             <a href="#kontak" className="text-neutral-600 hover:text-neutral-900">Kontak</a>
           </nav>
           <a
@@ -29,8 +33,9 @@ function App() {
 
       <main>
         <Hero />
-        <Services />
-        <Showcase />
+        <div data-parallax="30"><Services /></div>
+        <div data-parallax="24"><Showcase /></div>
+        <Gallery />
         <Contact />
       </main>
 
@@ -41,6 +46,7 @@ function App() {
             <a href="#beranda" className="text-neutral-600 hover:text-neutral-900">Beranda</a>
             <a href="#layanan" className="text-neutral-600 hover:text-neutral-900">Layanan</a>
             <a href="#karya" className="text-neutral-600 hover:text-neutral-900">Karya</a>
+            <a href="#galeri" className="text-neutral-600 hover:text-neutral-900">Galeri</a>
             <a href="#kontak" className="text-neutral-600 hover:text-neutral-900">Kontak</a>
           </div>
         </div>
